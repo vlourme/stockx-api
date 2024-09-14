@@ -46,3 +46,18 @@ export interface Variant {
     price: number
     size: string
 }
+
+export interface MarketData {
+    item_id: string
+    median_price: number
+    avg_price: number
+    date: string
+}
+
+export interface VariantMarketData {
+    item_id: string
+    variant_id: string
+    size: string
+    price: number
+    date: string
+}

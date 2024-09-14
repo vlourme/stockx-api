@@ -30,6 +30,18 @@ describe('StockXAPI', () => {
                 const products = await api.searchProducts('Jordan 1');
                 expect(products).toHaveProperty('hits');
             });
+
+            it('should return the market data for a product', async () => {
+                const marketData = await api.getMarketData('e46adad2-21e2-48b5-86ca-9f9ebdc01322');
+                expect(marketData).toBeInstanceOf(Array);
+                expect(marketData[0]).toHaveProperty('item_id', 'e46adad2-21e2-48b5-86ca-9f9ebdc01322');
+            });
+
+            it('should return the market data for a variant of a product', async () => {
+                const variantMarketData = await api.getVariantMarketData('aa7e8a4d-720f-4fe9-a0a9-f2b47b04bea7', '8e2265bc-a210-494c-ba35-9e5d71e47b51');
+                expect(variantMarketData).toBeInstanceOf(Array);
+                expect(variantMarketData[0]).toHaveProperty('item_id', 'aa7e8a4d-720f-4fe9-a0a9-f2b47b04bea7');
+            });
         });
     });
 });

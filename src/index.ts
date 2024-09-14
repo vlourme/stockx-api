@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Product, SearchResults } from "./index.type";
+import { MarketData, Product, SearchResults, VariantMarketData } from "./index.type";
 
 enum StockXLocation {
     US = 'us',
@@ -74,6 +74,27 @@ class StockXAPI {
      */
     async getProduct(productId: string): Promise<Product> {
         const response = await axios.get(`${this.baseUrl}/product/${productId}`);
+        return response.data;
+    }
+
+    /**
+     * Get the market data for a product.
+     * @param {string} productId - The ID of the product.
+     * @returns {Promise<MarketData>} The market data.
+     */
+    async getMarketData(productId: string): Promise<MarketData[]> {
+        const response = await axios.get(`${this.baseUrl}/product/${productId}/market`);
+        return response.data;
+    }
+
+    /**
+     * Get the market data for a variant of a product.
+     * @param {string} productId - The ID of the product.
+     * @param {string} variantId - The ID of the variant.
+     * @returns {Promise<VariantMarketData>} The market data.
+     */
+    async getVariantMarketData(productId: string, variantId: string): Promise<VariantMarketData[]> {
+        const response = await axios.get(`${this.baseUrl}/product/${productId}/market/${variantId}`);
         return response.data;
     }
 }
