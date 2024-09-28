@@ -32,9 +32,9 @@ class StockXAPI {
     protected get baseUrl(): string {
         switch (this.location) {
             case StockXLocation.US:
-                return 'https://api.v2.stockx.vlour.me';
+                return 'https://api.sneakersapi.dev';
             case StockXLocation.EU:
-                return 'https://de.api.v2.stockx.vlour.me';
+                return 'https://eu.api.sneakersapi.dev';
         }
     }
 
