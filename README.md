@@ -1,7 +1,7 @@
 # StockX API
 
 An unofficial StockX API wrapper for Node.js and Browser.
-Based on this free [StockX API](https://stockx.vlour.me/api).
+Based on this free [StockX API](https://sneakersapi.dev).
 
 Product IDs and variant IDs are same UUIDs used by StockX.
 
