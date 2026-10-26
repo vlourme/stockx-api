@@ -1,6 +1,6 @@
 {
   "name": "@vlourme/stockx-api",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "An unofficial StockX API wrapper for Node.js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -27,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/vlourme/stockx-api/issues"
   },
-  "homepage": "https://sneakersapi.dev",
+  "homepage": "https://pckt.sh",
   "devDependencies": {
     "@babel/preset-typescript": "^7.24.7",
     "@types/jest": "^27.0.3",
